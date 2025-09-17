@@ -11,3 +11,17 @@ COPY . .
 
 EXPOSE 3000
 CMD ["npm", "start"]
+
+github/workflows/docker-ci-cd.yml
+# Example for a Node.js app
+FROM node:18
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+CMD ["npm", "start"]
